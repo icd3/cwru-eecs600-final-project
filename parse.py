@@ -180,6 +180,8 @@ def parse_sections(sections):
         p = nltk.RegexpParser(parse_rules)
         for i in range(0,len(sents)):
             #print sents[i]
+            if len(sents[i]) == 0:
+                continue
             result = p.parse(sents[i])
             if (len(sys.argv) > 2 and sys.argv[2] == 'debug'):
                 print result
